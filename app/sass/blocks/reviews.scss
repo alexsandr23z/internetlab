@@ -1,0 +1,142 @@
+.main__reviews {
+  margin-top: 80px;
+  width: 100%;
+  height: 564px;
+  background-color: rgba(246, 248, 250, 1);
+}
+
+.reviews__title {
+  display: flex;
+  justify-content: center;
+  margin: 0;  
+  margin-right: 21px;
+  padding-top: 57px;
+  padding-bottom: 32px;
+  color: rgba(25, 28, 31, 1);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 56px;
+}
+
+.reviews__content {
+  position: relative;
+  display: grid;
+  grid-template-columns: 341px 341px 341px;
+  gap: 32px;
+  justify-content: center;
+  margin-right: 21px;
+}
+
+.reviews__card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 341px;
+  min-height: 316px;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.reviews__card-container {
+  width: 297px;
+}
+
+.reviews__card-info {
+  display: flex;
+  margin-top: 22px;  
+}
+
+.reviews__card-people {
+  display: grid;
+  grid-template-columns: 237px;
+  margin-left: 16px;
+}
+
+.reviews__card-name {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: rgba(25, 28, 31, 1);
+}
+
+.reviews__card-city {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: rgba(94, 100, 106, 1);
+}
+
+.reviews__card-description {
+  margin: 0;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: rgba(25, 28, 31, 1);
+}
+
+.reviews__arrow {
+  position: absolute;
+  top: 47%;
+  width: 20px;
+  height: 20px;
+  border-top: 2px solid rgba(194, 200, 205, 1);
+  border-right: 2px solid rgba(194, 200, 205, 1);
+  margin-right: 60px;
+  cursor: pointer;
+}
+
+.reviews__arrow--left {
+  left: 351;
+  transform: rotate(-135deg);
+}
+
+.reviews__arrow--right {
+  transform: rotate(45deg);
+  right: 298;
+}
+
+.reviews__arrow--active {
+  border-top: 2px solid rgba(42, 108, 234, 1);
+  border-right: 2px solid rgba(42, 108, 234, 1);
+}
+
+.reviews__arrow--active:hover {
+  border-top: 2px solid rgba(57, 125, 255, 1);
+  border-right: 2px solid rgba(57, 125, 255, 1);
+}
+
+.reviews__arrow--active:active {
+  border-top: 2px solid rgba(42, 108, 234, 1);
+  border-right: 2px solid rgba(42, 108, 234, 1);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-right: 13px;
+}
+
+.pagination__dot {
+  width: 8px; 
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(194, 200, 205, 1); 
+  margin: 0 9px; 
+  cursor: pointer;
+}
+
+.pagination__dot--active {
+  background-color: rgba(42, 108, 234, 1);
+}
+
+.pagination__dot:hover {
+  background-color: rgba(57, 125, 255, 1);
+}
+
+.pagination__dot:active {
+  background-color: rgba(42, 108, 234, 1);
+}
+

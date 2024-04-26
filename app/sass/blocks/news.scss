@@ -1,0 +1,30 @@
+.main__news {
+  background-color: rgba(246, 248, 250, 1);
+}
+
+.news__container {
+  padding-top: 68px;
+  padding-bottom: 67px;
+  display: grid;
+  grid-template-columns: 592px 592px;
+  justify-content: center;
+  gap: 26px;
+}
+
+.news__title {
+  margin: 0;
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 32px;
+  color: rgba(25, 28, 31, 1);
+}
+
+.news__description {
+  margin: 0;
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  color: rgba(25, 28, 31, 1);
+}

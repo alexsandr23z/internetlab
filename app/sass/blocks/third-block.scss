@@ -1,0 +1,42 @@
+.main__third-block {
+  margin-top: 78px;
+  display: flex;
+  justify-content: center;
+}
+
+.third-block__text {
+  width: 592px;
+  margin-right: 28px;
+}
+
+.third-block__text-title {
+  margin: 0;
+  margin-top: 125px;
+  margin-bottom: 22px;
+  color: rgba(25, 28, 31, 1);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+}
+
+.third-block__text-info {
+  margin: 0;
+  line-height: 24px;
+  color: rgba(94, 100, 106, 1);
+  margin-bottom: 36px;
+}
+
+.third-block__text-description {
+  margin: 0;
+  line-height: 24px;
+  color: rgba(94, 100, 106, 1);
+}
+
+.third-block__img {
+  position: relative;
+  width: 592px;
+  height: 448px;
+  background: url('/img/mobile-good.svg'), url('/img/van.svg');
+  background-repeat: no-repeat, no-repeat;
+  background-position: 50%, 50%;
+}
