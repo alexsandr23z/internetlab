@@ -76,8 +76,8 @@ function Form() {
           {formData.name !== '' && formData.nameValid ? <span className="valid"></span> : <span className="visually-hidden"></span>} 
           {formData.name !== '' && !formData.nameValid ? <span className="novalid"></span> : <span className="visually-hidden"></span>}
         </div>
-        <div className={`form__input ${formData.tel !== '' && formData.tel ? 'checkbox__field--valid' : '' ||
-          formData.tel !== '' && !formData.tel ? 'checkbox__field--novalid' : ''}`}>
+        <div className={`form__input ${formData.tel !== '' && formData.telValid ? 'checkbox__field--valid' : '' ||
+          formData.tel !== '' && !formData.telValid ? 'checkbox__field--novalid' : ''}`}>
           <label className="form__input-label" htmlFor="tel"></label>
           <input
             className="checkbox__field-tel"

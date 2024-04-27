@@ -11,12 +11,6 @@
   height: 960px;
   background: url('/img/header-fon.png'), url('/img/header-img.jpg');
   background-repeat: no-repeat, no-repeat;
-
-  @media (max-width: $tablet-width) {
-    background: url('/img/header-tablet-fon.png'), url('/img/header-tablet.jpg');
-    background-repeat: no-repeat, no-repeat;
-    background-position: center center;
-  }
 }
 
 .header__wrapper {
@@ -31,10 +25,6 @@
   margin-left: 365px;
   height: 80px;
   width: 300px;
-
-  @media (max-width: $tablet-width) {
-    margin-left: 605px;
-  }
 }
 
 .testLab__checkbox .testLab__checkbox-input {
