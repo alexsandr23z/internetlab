@@ -9,25 +9,26 @@ function Reviews() {
   const reviewsMockLength = reviewsMock.length;
 
   useLayoutEffect(() => {
-    const checkWindowSize = () => {
-      setIsTablet(window.innerWidth <= 768);
-    };
-    
-    checkWindowSize();
-  
-    const resizeListener = () => {
+    const handleResize = () => {
       const isTabletSize = window.innerWidth <= 768;
-      if (isTablet !== isTabletSize) {
-        setIsTablet(isTabletSize);
-      }
+      setIsTablet(isTabletSize);
     };
   
-    window.addEventListener('resize', resizeListener);
+    handleResize();
+  
+    let resizeTimer: NodeJS.Timeout;
+  
+    const debounceResize = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(handleResize, 250);
+    };
+  
+    window.addEventListener('resize', debounceResize);
   
     return () => {
-      window.removeEventListener('resize', resizeListener);
+      window.removeEventListener('resize', debounceResize);
     };
-  }, [isTablet]);
+  }, []);
 
   const handleNext = () => {
     const nextIndex = Math.min(startIndex + REVIEWS_COUNT_END, reviewsMockLength);
