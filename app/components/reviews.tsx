@@ -10,16 +10,22 @@ function Reviews() {
 
   useLayoutEffect(() => {
     const checkWindowSize = () => {
-      const width = window.innerWidth;
-      setIsTablet(width <= 768);
+      setIsTablet(window.innerWidth <= 768);
     };
     
     checkWindowSize();
-
-    window.addEventListener('resize', checkWindowSize);
-
+  
+    const resizeListener = () => {
+      const isTabletSize = window.innerWidth <= 768;
+      if (isTablet !== isTabletSize) {
+        setIsTablet(isTabletSize);
+      }
+    };
+  
+    window.addEventListener('resize', resizeListener);
+  
     return () => {
-      window.removeEventListener('resize', checkWindowSize);
+      window.removeEventListener('resize', resizeListener);
     };
   }, [isTablet]);
 
