@@ -1,5 +1,10 @@
 .main__news {
   background-color: rgba(246, 248, 250, 1);
+  
+  @media (max-width: $tablet-width) {
+    margin: 0 auto;
+    width: 768px;
+  }
 }
 
 .news__container {
@@ -8,7 +13,14 @@
   display: grid;
   grid-template-columns: 592px 592px;
   justify-content: center;
-  gap: 26px;
+  gap: 10px;
+
+  @media (max-width: $tablet-width) {
+    padding-top: 0;
+    padding-bottom: 32px;
+    display: grid;
+    grid-template-columns: 728px;
+  }
 }
 
 .news__title {
@@ -18,6 +30,10 @@
   font-weight: 600;
   line-height: 32px;
   color: rgba(25, 28, 31, 1);
+
+  @media (max-width: $tablet-width) {
+    margin-top: 10px;
+  }
 }
 
 .news__description {
@@ -27,4 +43,8 @@
   font-weight: 400;
   line-height: 28px;
   color: rgba(25, 28, 31, 1);
+
+  @media (max-width: $tablet-width) {
+    margin-top: 46px;
+  }
 }

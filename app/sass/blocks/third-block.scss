@@ -2,11 +2,20 @@
   margin-top: 78px;
   display: flex;
   justify-content: center;
+
+  @media (max-width: $tablet-width) {
+    margin-top: 70px;
+  }
 }
 
 .third-block__text {
   width: 592px;
   margin-right: 28px;
+
+  @media (max-width: $tablet-width) {
+    width: 352px;
+    margin-right: 24px;
+  }
 }
 
 .third-block__text-title {
@@ -17,6 +26,14 @@
   font-size: 32px;
   font-weight: 600;
   line-height: 40px;
+
+  @media (max-width: $tablet-width) {
+    margin: 0;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+  }
 }
 
 .third-block__text-info {
@@ -24,12 +41,23 @@
   line-height: 24px;
   color: rgba(94, 100, 106, 1);
   margin-bottom: 36px;
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 28px;
+    font-size: 16px;
+    line-height: 28px;
+  }
 }
 
 .third-block__text-description {
   margin: 0;
   line-height: 24px;
   color: rgba(94, 100, 106, 1);
+
+  @media (max-width: $tablet-width) {
+    font-size: 16px;
+    line-height: 28px;
+  }
 }
 
 .third-block__img {
@@ -39,4 +67,13 @@
   background: url('/img/mobile-good.svg'), url('/img/van.svg');
   background-repeat: no-repeat, no-repeat;
   background-position: 50%, 50%;
+
+  @media (max-width: $tablet-width) {
+    margin-top: -16px;
+    width: 351px;
+    height: 265px;
+    background: url('/img/mobile-good-tablet.svg'), url('/img/van-tablet.svg');
+    background-repeat: no-repeat, no-repeat;
+    background-position: 50%, 50%;
+  }
 }

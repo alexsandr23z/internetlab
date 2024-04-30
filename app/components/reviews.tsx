@@ -1,11 +1,27 @@
 'use client';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { reviewsMock } from "../mock/mock";
-import { REVIEWS_COUNT_END, REVIEWS_COUNT_START } from "../consts";
+import { REVIEWS_COUNT_END, REVIEWS_COUNT_END_TABLET, REVIEWS_COUNT_START } from "../consts";
 
 function Reviews() {
   const [startIndex, setStartIndex] = useState<number>(REVIEWS_COUNT_START);
+  const [isTablet, setIsTablet] = useState<boolean>(false);
   const reviewsMockLength = reviewsMock.length;
+
+  useEffect(() => {
+    const checkWindowSize = () => {
+      const width = window.innerWidth;
+      setIsTablet(width <= 768);
+    };
+    
+    checkWindowSize();
+
+    window.addEventListener('resize', checkWindowSize);
+
+    return () => {
+      window.removeEventListener('resize', checkWindowSize);
+    };
+  }, []);
 
   const handleNext = () => {
     const nextIndex = Math.min(startIndex + REVIEWS_COUNT_END, reviewsMockLength);
@@ -18,11 +34,16 @@ function Reviews() {
   };
 
   const handlePaginationDotClick = (index: number) => {
-    setStartIndex(index * REVIEWS_COUNT_END);
+    if (isTablet === true) {
+      setStartIndex(index * REVIEWS_COUNT_END_TABLET);
+    } else {
+      setStartIndex(index * REVIEWS_COUNT_END);
+    }
   };
 
   const remainingReviews = reviewsMockLength - startIndex;
-  const visibleReviews = Math.min(REVIEWS_COUNT_END, remainingReviews);
+  const visibleReviews = Math.min(isTablet === true ? REVIEWS_COUNT_END_TABLET
+    : REVIEWS_COUNT_END, remainingReviews);
 
   return (
     <div className="main__reviews">
@@ -53,8 +74,12 @@ function Reviews() {
         </div>
       </div>
       <div className="pagination">
-        {Array.from({ length: Math.ceil(reviewsMockLength / REVIEWS_COUNT_END) }, (_, i) => (
+        {!isTablet && Array.from({ length: Math.ceil(reviewsMockLength / REVIEWS_COUNT_END) }, (_, i) => (
           <span key={i} className={`pagination__dot ${startIndex / REVIEWS_COUNT_END === i ? 'pagination__dot--active' : ''}`} 
+          onClick={() => handlePaginationDotClick(i)}></span>
+        ))}
+        {isTablet && Array.from({ length: Math.ceil(reviewsMockLength / REVIEWS_COUNT_END_TABLET) }, (_, i) => (
+          <span key={i} className={`pagination__dot ${startIndex / REVIEWS_COUNT_END_TABLET === i ? 'pagination__dot--active' : ''}`} 
           onClick={() => handlePaginationDotClick(i)}></span>
         ))}
       </div>

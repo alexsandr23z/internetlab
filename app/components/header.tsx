@@ -1,17 +1,28 @@
 'use client';
 import { useState } from "react";
+import BurgerMenu from "./burger-menu";
 
 function Header() {
   const [activeNavLink, setActiveNavLink] = useState<string>('');
+  const [activeMenu, setActiveMenu] = useState<boolean>(false);
   
   const handleNavLinkClick = (id: string) => {
     setActiveNavLink(id);
+  };
+
+  const handleActiveMenuClick = () => {
+    setActiveMenu(true);
   };
 
   return (
     <header className="header">
       <div className="header__container">
         <div className="header__wrapper">
+          <button className="header__toggle" type="button"
+            onClick={handleActiveMenuClick}>
+            <span className="visually-hidden">Открыть меню</span>
+          </button>
+          {activeMenu && <BurgerMenu setActiveMenu={setActiveMenu}></BurgerMenu>}
           <div className="header__testLab">
             <div className="testLab__checkbox">
               <input className="testLab__checkbox-input input__testLab" id="testLab" autoComplete="off" name="checkbox" title="checkbox" placeholder="checkbox" type="checkbox" />
