@@ -21,7 +21,7 @@ function Reviews() {
     return () => {
       window.removeEventListener('resize', checkWindowSize);
     };
-  }, []);
+  }, [isTablet]);
 
   const handleNext = () => {
     const nextIndex = Math.min(startIndex + REVIEWS_COUNT_END, reviewsMockLength);
