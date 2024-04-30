@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { reviewsMock } from "../mock/mock";
 import { REVIEWS_COUNT_END, REVIEWS_COUNT_END_TABLET, REVIEWS_COUNT_START } from "../consts";
 
@@ -8,7 +8,7 @@ function Reviews() {
   const [isTablet, setIsTablet] = useState<boolean>(false);
   const reviewsMockLength = reviewsMock.length;
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const checkWindowSize = () => {
       const width = window.innerWidth;
       setIsTablet(width <= 768);
