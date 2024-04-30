@@ -6,12 +6,19 @@ import { REVIEWS_COUNT_END, REVIEWS_COUNT_END_TABLET, REVIEWS_COUNT_START } from
 function Reviews() {
   const [startIndex, setStartIndex] = useState<number>(REVIEWS_COUNT_START);
   const [isTablet, setIsTablet] = useState<boolean>(false);
+  const [isDesktop, setIsDesktop] = useState<boolean>(true);
   const reviewsMockLength = reviewsMock.length;
 
   useLayoutEffect(() => {
     const handleResize = () => {
       const isTabletSize = window.innerWidth <= 768;
-      setIsTablet(isTabletSize);
+      if (isTabletSize) {
+        setIsTablet(isTabletSize);
+        setIsDesktop(false)
+      } else {
+        setIsDesktop(true);
+        setIsTablet(false);
+      }
     };
   
     handleResize();
@@ -81,7 +88,7 @@ function Reviews() {
         </div>
       </div>
       <div className="pagination">
-        {!isTablet && Array.from({ length: Math.ceil(reviewsMockLength / REVIEWS_COUNT_END) }, (_, i) => (
+        {isDesktop && Array.from({ length: Math.ceil(reviewsMockLength / REVIEWS_COUNT_END) }, (_, i) => (
           <span key={i} className={`pagination__dot ${startIndex / REVIEWS_COUNT_END === i ? 'pagination__dot--active' : ''}`} 
           onClick={() => handlePaginationDotClick(i)}></span>
         ))}
