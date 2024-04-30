@@ -26,6 +26,7 @@
 }
 
 .questions__item {
+  position: relative;
   list-style-type: none;
   width: 1008px;
   margin-left: -40px;
@@ -93,7 +94,7 @@
 
   @media (max-width: $tablet-width) {
     position: absolute;
-    right: -20px;
+    right: -3px;
     width: 24px;
     height: 24px;
   }
@@ -151,7 +152,7 @@
 
   @media (max-width: $tablet-width) {
     position: absolute;
-    right: -20px;
+    right: -3px;
     width: 24px;
     height: 24px;
   }
