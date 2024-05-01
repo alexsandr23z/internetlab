@@ -9,11 +9,22 @@ function Reviews() {
   const [isDesktop, setIsDesktop] = useState<boolean>(true);
   const reviewsMockLength = reviewsMock.length;
 
+  
   useLayoutEffect(() => {
+    
     const handleResize = () => {
+      const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      const isTabletDevice = /iPad|Android|Tablet/i.test(navigator.userAgent);
       const isTabletSize = window.innerWidth <= 768;
+      
       if (isTabletSize) {
         setIsTablet(isTabletSize);
+        setIsDesktop(false)
+      } else if (isTabletDevice) {
+        setIsTablet(isTabletDevice);
+        setIsDesktop(false)
+      } else if (isMobileDevice) {
+        setIsTablet(isMobileDevice);
         setIsDesktop(false)
       } else {
         setIsDesktop(true);
